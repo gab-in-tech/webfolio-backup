@@ -79,6 +79,7 @@ Format: Version · Date · What changed and why.
 - Internal nav links: no `target="_blank"` — stays in same tab
 - External links (LinkedIn, GitHub, Tally): `target="_blank"` + `rel="noopener noreferrer"`
 - Changed spacing of good and bad blueprint. Added more context and confidence in _"That's what I make. Not just a good blueprint, but a great one."_
+- Changed job title to a more clear one
 
 ---
 
