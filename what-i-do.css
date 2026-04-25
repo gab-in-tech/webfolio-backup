@@ -26,6 +26,14 @@ footer {
   --callout-bg: #2a2b2c;
   --callout-border: #666;
 }
+.home-btn,
+.scroll-btn {
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  transition:
+    border-color 0.18s,
+    color 0.18s;
+}
 *,
 ::after,
 ::before {
@@ -51,15 +59,15 @@ html {
   min-height: 44px;
   margin-bottom: 28px;
   background: var(--bg);
-  border: 1px solid var(--border);
   border-radius: 8px;
-  color: var(--text-2);
   font-size: 13px;
-  transition:
-    border-color 0.18s,
-    color 0.18s;
 }
-.home-btn:hover {
+.card,
+.scroll-btn {
+  background: var(--surface);
+}
+.home-btn:hover,
+.scroll-btn:hover {
   border-color: var(--border-mid);
   color: var(--text-1);
 }
@@ -68,6 +76,29 @@ html {
   height: 15px;
   fill: currentColor;
   flex-shrink: 0;
+}
+.scroll-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+.scroll-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.scroll-btn:focus-visible {
+  outline: 2px solid var(--text-2);
+  outline-offset: 3px;
+  color: var(--text-1);
 }
 .page {
   min-height: 100vh;
@@ -78,7 +109,6 @@ html {
 .card {
   width: 100%;
   max-width: 620px;
-  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 48px 48px 40px;

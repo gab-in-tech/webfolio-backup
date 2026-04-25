@@ -12,20 +12,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- FAVICON: the small icon on the browser tab next to your title.
-       Place your icon file in the same folder as index.html.
-       Recommended size: 32x32px or 64x64px.
-       Free tools to make one: favicon.io or realfavicongenerator.net
-       If using a .ico file instead, change type to "image/x-icon" and href to "favicon.ico" -->
     <link
       rel="icon"
       type="image/png"
       href="favicon_blue-book/favicon-32x32.png"
     />
-
+    <!-- PERFORMANCE: preconnect opens a connection to Google's font servers early.
+       crossorigin is required on the second link — fonts load from a different
+       subdomain and the browser needs this hint to handle it correctly.
+       display=swap on the font URL means text shows immediately in a fallback
+       font while the custom font loads — no invisible text flash. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -34,6 +32,19 @@
   </head>
 
   <body>
+    <!-- SCROLL BUTTON: one button, fixed to the bottom-right corner.
+       Scrolls to the bottom when at the top, back to top when at the bottom.
+       JavaScript in what-i-do.js handles the toggle — three lines total. -->
+    <button class="scroll-btn" id="scrollBtn" aria-label="Scroll to bottom">
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+      </svg>
+    </button>
+
     <main class="page">
       <article class="card">
         <!-- HOME BUTTON: inside the card, first thing visible.
@@ -110,11 +121,15 @@
           </p>
           <p class="body-text">
             A bad blueprint means your team is guessing, making mistakes,
-            redoing work, and calling the one person who just knows. A good
-            blueprint means anyone can pick it up and know exactly what to do,
-            in what order, and why. Even when you're not in the room.
+            redoing work, and calling the one person who just knows.
           </p>
-          <p class="body-text">That's what I make.</p>
+          <p class="body-text">
+            A good blueprint means anyone can pick it up and know exactly what
+            to do, in what order, and why. Even when you're not in the room.
+          </p>
+          <p class="body-text">
+            That's what I make. Not just a good blueprint, but a great one.
+          </p>
 
           <!-- CALLOUT: the most important idea on the page.
              Visually distinct to stop the reader mid-scroll. -->
@@ -271,5 +286,6 @@
         </footer>
       </article>
     </main>
+    <script src="what-i-do.js"></script>
   </body>
 </html>

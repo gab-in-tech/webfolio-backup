@@ -17,12 +17,6 @@
     <title>Gab Webfolio</title>
     <!-- What appears on the browser tab. -->
 
-    <!-- This is for the Favicon to work as intended. See below what a favicon is. -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
     <!-- FAVICON: the small icon on the browser tab next to your title.
        Place your icon file in the same folder as index.html.
        Recommended size: 32x32px or 64x64px.
@@ -33,13 +27,20 @@
       type="image/png"
       href="favicon_blue-book/favicon-32x32.png"
     />
-    <!-- This optimizes Google font loading times -->
+
+    <!-- PERFORMANCE: preconnect tells the browser to open a connection to Google's
+       font servers early — before it even starts downloading the fonts.
+       This shaves off a chunk of load time on first visit.
+       crossorigin is required on the second one because fonts are loaded
+       from a different subdomain (gstatic vs googleapis). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Google Fonts: loads two fonts from the web.
        DM Mono  → used for name, role, and links (precise, technical)
-       DM Sans  → used for the bio (warmer, more readable) -->
+       DM Sans  → used for the bio (warmer, more readable)
+       display=swap means the browser shows text in a fallback font immediately
+       while the custom font loads, instead of showing nothing. -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
