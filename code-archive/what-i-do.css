@@ -1,0 +1,433 @@
+/* ============================================================
+   WHAT-I-DO.CSS — Gabriel Philip General
+   ============================================================
+   This stylesheet shares the same color variables and base
+   styles as style.css. The difference is this page is a
+   long-form content page, not a centered card — so the layout
+   rules are different.
+
+   RULE OF THUMB: If it controls color or font → same as style.css.
+   If it controls layout or spacing → specific to this page.
+   ============================================================ */
+
+/* ── 1. COLOR VARIABLES ──────────────────────────────────────
+   Exact same palette as style.css. Keeping these consistent
+   is what makes both pages feel like one cohesive site.       */
+
+:root {
+  --bg: #1e1f20;
+  --surface: #272829;
+  --surface-2: #2f3031;
+  --border: #333435;
+  --border-mid: #444546;
+  --text-1: #e2e2e0;
+  --text-2: #a0a09e; /* bumped up slightly from #909090 for better contrast */
+  --text-3: #787876; /* was #5A5A5A — now passes WCAG AA at normal text sizes */
+  --text-4: #5a5a5a; /* kept for purely decorative, non-essential elements only */
+  --link-idle: #b0b0ae;
+  --link-hover: #e2e2e0;
+  --callout-bg: #2a2b2c;
+  --callout-border: #666;
+}
+
+/* ── 2. RESET ────────────────────────────────────────────────  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 3. BASE ─────────────────────────────────────────────────  */
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text-1);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 4. HOME BUTTON ──────────────────────────────────────────
+   Sits at the top of the card, left-aligned.
+   display: inline-flex makes it only as wide as its content
+   so it doesn't stretch across the full card width.           */
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px; /* increased — ensures minimum 44px touch target height */
+  min-height: 44px; /* explicit minimum touch target — Apple & Google UI guideline */
+  margin-bottom: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border); /* was 0.5px — unreliable on standard screens */
+  border-radius: 8px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.home-btn:hover {
+  border-color: var(--border-mid);
+  color: var(--text-1);
+}
+
+.home-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── 5. PAGE LAYOUT ──────────────────────────────────────────
+   No fixed button overhead anymore, so padding-top is reduced. */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px 64px;
+}
+
+/* ── 6. CARD ─────────────────────────────────────────────────
+   Same visual container as the homepage but taller and
+   with more generous internal spacing for long-form content.  */
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  background: var(--surface);
+  border: 1px solid var(--border); /* was 0.5px — unreliable on standard screens */
+  border-radius: 20px;
+  padding: 48px 48px 40px;
+  height: fit-content;
+}
+
+/* ── 7. PROFILE HEADER ───────────────────────────────────────
+   Same centered layout as the homepage.                       */
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.avatar-wrap {
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border-mid);
+  display: block;
+  margin: 0 auto;
+  background: var(--border);
+}
+
+.name {
+  font-family: "DM Mono", monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* The cheeky tease pointing forward to the content below. */
+.homepage-nudge {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-3); /* updated variable now passes contrast */
+  line-height: 1.6;
+}
+
+/* ── 8. DIVIDER ──────────────────────────────────────────────  */
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border); /* was 0.5px */
+  margin: 32px 0;
+}
+
+/* ── 9. SECTIONS ─────────────────────────────────────────────
+   Each content section has a label (h2) and body text.
+   The label is small, muted, and uppercase — it acts more
+   like a section marker than a loud heading.                  */
+
+.section {
+  margin-bottom: 8px; /* divider handles the spacing between sections */
+}
+
+.section-label {
+  font-family: "DM Mono", monospace;
+  font-size: 14px; /* was 12px — too small for accessibility */
+  font-weight: 500;
+  color: var(--text-3); /* now passes contrast at this size */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.body-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* closing-signal: the "you're in the right place" line after the signal list.
+   Needs top margin since it follows a list, not another paragraph. */
+.closing-signal {
+  margin-top: 20px;
+  color: var(--text-2);
+}
+
+/* closing-emphasis: short punchy closer before the CTA.
+   Slightly brighter so it lands with more weight. */
+.closing-emphasis {
+  color: var(--text-1);
+  font-weight: 400;
+}
+
+/* ── 10. CALLOUT BLOCKQUOTE ──────────────────────────────────
+   A visually distinct block that breaks the reading rhythm
+   and signals: "this is the most important thing on the page."
+   border-left is the classic editorial callout treatment.     */
+
+.callout {
+  border-left: 3px solid var(--callout-border);
+  background: var(--callout-bg);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-1);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ── 11. SIGNAL LIST ─────────────────────────────────────────
+   Replaces default bullet points (which look inconsistent
+   across browsers) with a custom dot using a pseudo-element. */
+
+.signal-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* was 12px — multi-line items need more breathing room */
+}
+
+.signal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* The dot: a small square rotated 45° into a diamond.
+   aria-hidden="true" in the HTML means screen readers skip it. */
+.signal-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--border-mid);
+  border-radius: 1px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-top: 8px; /* aligns the dot with the first line of text */
+}
+
+/* ── 12. DELIVERABLES GRID ───────────────────────────────────
+   Two-column grid on desktop, single column on mobile.
+   auto-fit with minmax means the browser decides how many
+   columns fit — we don't have to hardcode it.                 */
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; /* was 12px — more breathing room between cards */
+  margin-top: 24px;
+}
+
+.deliverable-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border); /* was 0.5px */
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.18s ease;
+}
+
+.deliverable-card:hover {
+  border-color: var(--border-mid);
+}
+
+.deliverable-title {
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: 10px;
+}
+
+.deliverable-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+/* ── 13. CTA SECTION ─────────────────────────────────────────
+   The CTA is the most important action on this page.
+   It should look like the primary action — not just another link.
+   A slightly filled background and 1px border give it weight
+   without making it feel like a loud, pushy button.             */
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 15px 36px;
+  min-height: 44px; /* consistent touch target */
+  border: 1px solid var(--border-mid); /* was 0.5px */
+  border-radius: 10px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* subtle fill — distinguishes it from nav links */
+  color: var(--text-1); /* brighter than link-idle — signals primary action */
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+.cta-btn:hover {
+  border-color: var(--text-2);
+  color: var(--link-hover);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* ── 14. FOOTER ──────────────────────────────────────────────
+   Footer is decorative/legal text — not navigation or content.
+   text-4 is acceptable here since it carries no critical info. */
+
+footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border); /* was 0.5px */
+  text-align: center;
+}
+
+.footer {
+  font-size: 13px;
+  color: var(--text-4); /* intentionally muted — purely decorative text */
+  font-family: "DM Mono", monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── 15. FOCUS STATES ────────────────────────────────────────
+   :focus-visible applies only when navigating by keyboard
+   (Tab key), not on mouse click. This is the correct modern
+   approach — it doesn't show an outline when you click a link,
+   only when a keyboard user tabs to it.
+
+   This is a core accessibility requirement. Without it,
+   keyboard-only users have no idea where they are on the page. */
+
+.home-btn:focus-visible,
+.cta-btn:focus-visible {
+  outline: 2px solid var(--text-2);
+  outline-offset: 3px; /* small gap between element edge and outline */
+  border-color: var(--border-mid);
+  color: var(--text-1);
+}
+
+.deliverable-card:focus-visible {
+  outline: 2px solid var(--text-2);
+  outline-offset: 3px;
+  border-color: var(--border-mid);
+}
+
+/* ── 16. MOBILE ──────────────────────────────────────────────  */
+
+@media (max-width: 540px) {
+  .page {
+    padding: 24px 16px 48px;
+  }
+
+  .card {
+    padding: 28px 20px 32px;
+    border-radius: 16px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .section-label {
+    font-size: 13px; /* slightly smaller on mobile but still readable */
+  }
+
+  .body-text {
+    font-size: 15px; /* step down on small screens without losing clarity */
+  }
+
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .callout {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .cta-btn {
+    width: 100%; /* full-width button on mobile — easier to tap */
+    justify-content: center;
+  }
+}

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What I Do — Gab Webfolio</title>
+
+    <!-- This is for the Favicon to work as intended. See below what a favicon is. -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- FAVICON: the small icon on the browser tab next to your title.
+       Place your icon file in the same folder as index.html.
+       Recommended size: 32x32px or 64x64px.
+       Free tools to make one: favicon.io or realfavicongenerator.net
+       If using a .ico file instead, change type to "image/x-icon" and href to "favicon.ico" -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon_blue-book/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="what-i-do.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <article class="card">
+        <!-- HOME BUTTON: inside the card, first thing visible.
+           min-height: 44px is enforced in CSS for touch targets. -->
+        <a href="index.html" class="home-btn" aria-label="Back to home">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          <span>Home</span>
+        </a>
+
+        <!-- PROFILE HEADER: centered, mirrors the homepage layout -->
+        <header class="profile-header">
+          <div class="avatar-wrap">
+            <img
+              class="avatar"
+              src="images/general-headshot.webp"
+              alt="Gabriel Philip General"
+            />
+          </div>
+
+          <p class="name">Gabriel Philip General</p>
+          <p class="role">Systems Documentation Specialist</p>
+
+          <!-- Cheeky nudge: acknowledges they came from the homepage
+             and signals they're about to get the full picture. -->
+          <p class="homepage-nudge">
+            (You read the bio. Now here's what it actually means.)
+          </p>
+        </header>
+
+        <hr class="divider" />
+
+        <!-- ── SECTION 1: OPENING ── -->
+        <section class="section" aria-labelledby="section-opening">
+          <h2 class="section-label" id="section-opening">The problem</h2>
+
+          <!-- The "Mark" story: opens with a scenario the prospect
+             immediately recognizes. Specificity builds trust faster
+             than any generic claim about your services. -->
+          <p class="body-text">
+            Most teams are held together by people, not processes. There's
+            always that one person everyone goes to because they just know how
+            things work. Mark, usually. And that's fine, until Mark is on leave,
+            gets promoted, or moves on.
+          </p>
+          <p class="body-text">
+            Then everything slows down. Questions pile up. Work gets redone. And
+            nobody really knows where to start.
+          </p>
+          <p class="body-text">That's where I come in.</p>
+          <p class="body-text">
+            I take the things that only exist in someone's head and turn them
+            into documentation anyone can follow. No jargon. No assumptions.
+            Just clear, straightforward guides that anyone can follow, even if
+            they're hearing about it for the first time.
+          </p>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ── SECTION 2: THE BLUEPRINT ANALOGY ── -->
+        <section class="section" aria-labelledby="section-blueprint">
+          <h2 class="section-label" id="section-blueprint">
+            The blueprint maker
+          </h2>
+          <p class="body-text">
+            An architect doesn't build the house. But nothing gets built without
+            the blueprint.
+          </p>
+          <p class="body-text">
+            A bad blueprint means your team is guessing, making mistakes,
+            redoing work, and calling the one person who just knows. A good
+            blueprint means anyone can pick it up and know exactly what to do,
+            in what order, and why. Even when you're not in the room.
+          </p>
+          <p class="body-text">That's what I make.</p>
+
+          <!-- CALLOUT: the most important idea on the page.
+             Visually distinct to stop the reader mid-scroll. -->
+          <blockquote class="callout">
+            The real value isn't just documentation. It's continuity. Your
+            business keeps running even when the person who built the system
+            leaves, gets promoted, or goes on leave.
+          </blockquote>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ── SECTION 3: WHO I WORK WITH ── -->
+        <section class="section" aria-labelledby="section-who">
+          <h2 class="section-label" id="section-who">Who I work with</h2>
+          <p class="body-text">
+            I work best with small to mid-sized teams where things are growing
+            faster than the documentation can keep up. Sound familiar?
+          </p>
+
+          <!-- SIGNAL LIST: lets prospects self-qualify as they read.
+             Each item is a real symptom they've likely experienced.
+             aria-hidden on the decorative dot keeps screen readers clean. -->
+          <ul class="signal-list" role="list">
+            <li class="signal-item">
+              <span class="signal-dot" aria-hidden="true"></span>
+              Your onboarding process is "just ask someone"
+            </li>
+            <li class="signal-item">
+              <span class="signal-dot" aria-hidden="true"></span>
+              Only one person on the team fully understands a certain process
+            </li>
+            <li class="signal-item">
+              <span class="signal-dot" aria-hidden="true"></span>
+              Your team uses tools like Notion, ClickUp, or Google Workspace but
+              nothing's actually documented inside them
+            </li>
+            <li class="signal-item">
+              <span class="signal-dot" aria-hidden="true"></span>
+              You're preparing to hire, delegate, or scale and you know things
+              will get messy if nothing's written down
+            </li>
+            <li class="signal-item">
+              <span class="signal-dot" aria-hidden="true"></span>
+              You've said "we should really document this" more than twice in
+              the last month
+            </li>
+          </ul>
+
+          <!-- Closing line: reassures without being pushy. -->
+          <p class="body-text closing-signal">
+            If any of that sounds familiar, you're in the right place.
+          </p>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ── SECTION 4: WHAT I ACTUALLY DELIVER ── -->
+        <section class="section" aria-labelledby="section-deliver">
+          <h2 class="section-label" id="section-deliver">
+            What I actually deliver
+          </h2>
+          <p class="body-text">
+            Not a Google Doc full of bullet points. Documentation that's
+            structured, readable, and built for the person who has to use it,
+            not the person who already knows everything.
+          </p>
+
+          <!-- DELIVERABLES GRID: two columns on desktop, one on mobile.
+             Each card is a scannable, self-contained service description. -->
+          <div class="deliverables-grid">
+            <div class="deliverable-card">
+              <p class="deliverable-title">SOPs</p>
+              <p class="deliverable-desc">
+                Step-by-step guides for your repeatable tasks, written so
+                clearly your newest hire can follow them without asking anyone
+                for help.
+              </p>
+            </div>
+
+            <div class="deliverable-card">
+              <p class="deliverable-title">Process Maps</p>
+              <p class="deliverable-desc">
+                A clear picture of how work moves through your team. Everyone
+                sees the full flow, not just their part of it.
+              </p>
+            </div>
+
+            <div class="deliverable-card">
+              <p class="deliverable-title">Internal Guides</p>
+              <p class="deliverable-desc">
+                Tool guides, onboarding docs, and how-to references that people
+                actually open when they need help.
+              </p>
+            </div>
+
+            <div class="deliverable-card">
+              <p class="deliverable-title">Knowledge Bases</p>
+              <p class="deliverable-desc">
+                One organized place where your team can find answers on their
+                own. Less back and forth. More getting things done.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ── SECTION 5: ONE THING WORTH KNOWING ── -->
+        <section class="section" aria-labelledby="section-worth-knowing">
+          <h2 class="section-label" id="section-worth-knowing">
+            One thing worth knowing
+          </h2>
+          <p class="body-text">
+            I don't redesign how your business runs. I don't tell you which
+            tools to use or rebuild your workflows from scratch.
+          </p>
+          <p class="body-text">
+            What I do is take what you already have and make sure it's written
+            down clearly enough that it works without you having to explain it
+            every time.
+          </p>
+
+          <!-- Short punchy closer: natural bridge into the CTA below. -->
+          <p class="body-text closing-emphasis">
+            You build it. I make sure everyone else can follow it too.
+          </p>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ── CTA ── -->
+        <section class="section cta-section" aria-labelledby="section-cta">
+          <h2 class="section-label" id="section-cta">
+            Sound like what you need?
+          </h2>
+          <p class="body-text">
+            Let's have a real conversation about what's not written down yet and
+            what it's costing you.
+          </p>
+
+          <!-- Replace "#" with your actual Tally form link when ready -->
+          <a href="https://tally.so/r/RGZG2K" class="cta-btn">
+            Work With Me
+            <span aria-hidden="true">→</span>
+          </a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+          <p class="footer">
+            © 2026 Gabriel Philip General. All rights reserved.
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+/* ============================================================
+   STYLE.CSS — Gabriel Philip General — Link-in-Bio
+   ============================================================
+   HOW CSS WORKS:
+   You write a "selector" (which element to target), then
+   inside curly braces {} you write "properties" (what to change)
+   and "values" (what to change it to).
+
+   Example:
+     .name {              ← selector: any element with class="name"
+       font-size: 18px;   ← property: font-size, value: 18px
+       color: red;        ← property: color, value: red
+     }
+   ============================================================ */
+
+/* ── 1. COLOR VARIABLES ──────────────────────────────────────
+   CSS variables let you define colors once and reuse them
+   everywhere. If you want to change a color, you change it
+   here in ONE place — not scattered across the whole file.
+   They live inside :root which means "the whole page."        */
+
+:root {
+  --bg: #1e1f20; /* page background — dark charcoal   */
+  --surface: #272829; /* card background — slightly lighter */
+  --border: #333435; /* default border color               */
+  --border-mid: #444546; /* border on hover/focus              */
+  --text-1: #e2e2e0; /* primary text — warm light gray     */
+  --text-2: #909090; /* secondary text — muted             */
+  --text-3: #5a5a5a; /* very muted — used for footer       */
+  --link-idle: #b0b0ae; /* nav link default color             */
+  --link-hover: #e2e2e0; /* nav link on hover                  */
+}
+
+/* ── 2. RESET ────────────────────────────────────────────────
+   Browsers add their own default spacing to elements.
+   This zeroes that out so we start with a clean slate.        */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding is counted inside the element's width, not added on top */
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 3. BASE STYLES ──────────────────────────────────────────
+   Applied to the <html> and <body> — the outermost containers. */
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text-1);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased; /* smoother text on Mac/iOS */
+}
+
+/* ── 4. PAGE LAYOUT ──────────────────────────────────────────
+   .page wraps everything. Flexbox is used here to center
+   the card both vertically (align-items) and horizontally
+   (justify-content) on the screen.                            */
+
+.page {
+  min-height: 100vh; /* vh = viewport height. 100vh = full screen height */
+  display: flex; /* activates Flexbox layout                          */
+  align-items: center; /* centers child vertically                          */
+  justify-content: center; /* centers child horizontally                        */
+  padding: 48px 24px; /* breathing room on mobile so card doesn't touch edges */
+}
+
+/* ── 5. CARD ─────────────────────────────────────────────────
+   The visible box that contains all the content.              */
+
+.card {
+  width: 100%;
+  max-width: 520px; /* never wider than 520px on big screens */
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 44px 40px;
+  text-align: center; /* centers all text and inline elements inside */
+}
+
+/* ── 6. AVATAR ───────────────────────────────────────────────  */
+
+.avatar-wrap {
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px; /* slightly rounded square — not a full circle */
+  object-fit: cover; /* crops photo to fill the box without stretching */
+  object-position: top; /* crops from the top so your face stays visible */
+  border: 1px solid var(--border-mid);
+  display: block;
+  margin: 0 auto; /* centers the image horizontally inside the card */
+  background: var(--border); /* gray placeholder shown while photo loads */
+}
+
+/* ── 7. NAME & ROLE ──────────────────────────────────────────  */
+
+.name {
+  font-family: "DM Mono", monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-2);
+  letter-spacing: 0.08em; /* spreads out the letters slightly — common for small caps */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* ── 8. BIO ──────────────────────────────────────────────────  */
+
+.bio {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+/* ── 9. DIVIDER ──────────────────────────────────────────────
+   The <hr> element is a horizontal line. We style it here
+   so it fits the dark theme instead of using the default gray. */
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin-bottom: 24px;
+}
+
+/* ── 10. NAV LINKS ───────────────────────────────────────────
+   Each link is a row with the label on the left and an
+   arrow on the right, separated by space-between.             */
+
+.nav {
+  display: flex;
+  flex-direction: column; /* stacks links vertically */
+  gap: 8px; /* space between each link */
+  margin-bottom: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes label left, arrow right */
+  padding: 15px 20px;
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none; /* removes the default underline on links */
+  color: var(--link-idle);
+  font-family: "DM Mono", monospace;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+
+  /* transition: what to animate, duration, easing.
+     This makes hover effects feel smooth instead of instant. */
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+/* The :hover pseudo-class applies styles only when the user
+   hovers their mouse over the element.                        */
+.nav-link:hover {
+  border-color: var(--border-mid);
+  color: var(--link-hover);
+  background: rgba(255, 255, 255, 0.03); /* very faint white overlay */
+}
+
+.arrow {
+  color: var(--text-3);
+  transition:
+    transform 0.18s ease,
+    color 0.18s ease;
+}
+
+.nav-link:hover .arrow {
+  transform: translateX(
+    3px
+  ); /* slides the arrow slightly to the right on hover */
+  color: var(--text-2);
+}
+
+/* ── 11. SOCIAL ICONS ────────────────────────────────────────  */
+
+.socials {
+  display: flex;
+  justify-content: center; /* centers the icon row horizontally */
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px; /* 48px — comfortable tap target, noticeably larger */
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-2);
+  text-decoration: none;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.social-link:hover {
+  border-color: var(--border-mid);
+  color: var(--text-1);
+}
+
+/* SVG icons inherit color from their parent .social-link,
+   so changing .social-link's color changes the icon too.      */
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* "currentColor" means: use whatever color the parent has */
+}
+
+/* ── 12. FOOTER ──────────────────────────────────────────────  */
+
+.footer {
+  font-size: 13px;
+  color: var(--text-3);
+  font-family: "DM Mono", monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── 13. MOBILE OPTIMIZATION ─────────────────────────────────
+   @media queries apply styles ONLY when a condition is true.
+   This one says: "if the screen is 480px wide or smaller,
+   apply these styles." This is how we adapt the layout
+   for phones without breaking the desktop version.            */
+
+@media (max-width: 540px) {
+  .page {
+    padding: 24px 16px; /* less padding on small screens */
+  }
+
+  .card {
+    padding: 36px 28px 32px; /* tighter padding inside the card */
+    border-radius: 16px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .nav-link {
+    padding: 15px 18px; /* slightly taller — easier to tap with a finger */
+    font-size: 14px;
+  }
+}
