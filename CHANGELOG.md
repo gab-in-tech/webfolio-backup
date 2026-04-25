@@ -78,7 +78,7 @@ Format: Version · Date · What changed and why.
   "One Thing Worth Knowing" section
 - Internal nav links: no `target="_blank"` — stays in same tab
 - External links (LinkedIn, GitHub, Tally): `target="_blank"` + `rel="noopener noreferrer"`
-- Changed spacing of good and bad blueprint. Added more context and confidence in "That's what I make. Not just a good blueprint, but a great one.
+- Changed spacing of good and bad blueprint. Added more context and confidence in _"That's what I make. Not just a good blueprint, but a great one."_
 
 ---
 
