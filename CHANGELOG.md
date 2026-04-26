@@ -19,9 +19,15 @@ Format: Version · Date · What changed and why.
 
 ## [v1.0.1] — 2026-04-25
 
-> Added Scroll to Top / Scroll to Bottom toggle button
->
-> Changed some content copy
+> - Added Scroll to Top / Scroll to Bottom toggle button
+> - Changed some content copy
+
+## [v1.1.2] — 2026-04-26
+
+> - Removed ~~Portfolio~~.
+> - Renamed `Case Study` to `Work`
+> - Added Notion link to Work
+> - Redirected Github link to new username
 
 ### Added
 
@@ -31,6 +37,17 @@ Format: Version · Date · What changed and why.
 - `what-i-do.css` — Stylesheet for long-form content page, same color variables as homepage
 - `CHANGELOG.md` — This file
 - `what-i-do.js` — Needed for Scroll to Top / Scroll to Bottom toggle button
+
+### Changed
+
+- Changed spacing of good and bad blueprint. Added more context and confidence in _"That's what I make. Not just a good blueprint, but a great one."_
+- Changed job title to a more clear one
+- Renamed "Case Study" to "Work"
+- Clarified bio copy
+
+### Removed
+
+- Portfolio was removed so that all current & future projects and case studies would be put in a centralized "Work" navlink
 
 ### Design
 
@@ -78,8 +95,6 @@ Format: Version · Date · What changed and why.
   "One Thing Worth Knowing" section
 - Internal nav links: no `target="_blank"` — stays in same tab
 - External links (LinkedIn, GitHub, Tally): `target="_blank"` + `rel="noopener noreferrer"`
-- Changed spacing of good and bad blueprint. Added more context and confidence in _"That's what I make. Not just a good blueprint, but a great one."_
-- Changed job title to a more clear one
 
 ---
 
