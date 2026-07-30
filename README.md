@@ -15,7 +15,6 @@ This project contains the main front-end files of the website, including HTML, C
 This repository is mainly used for:
 
 - Backing up my website files
-- Tracking changes through Git
 - Keeping a version history of the project
 - Saving reference code for future updates
 
