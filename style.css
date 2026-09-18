@@ -85,7 +85,7 @@ html {
 }
 .role {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-1);
   letter-spacing: 0.08em;
   text-transform: uppercase;
