@@ -131,7 +131,7 @@ html {
 .term {
   font-style: italic;
   color: var(--text-1);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 .homepage-nudge {
