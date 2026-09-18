@@ -81,11 +81,11 @@ html {
 }
 .bio,
 .role {
-  font-weight: 400;
+  font-weight: 300;
   color: var(--text-2);
 }
 .role {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -197,7 +197,7 @@ html {
     font-size: 20px;
   }
   .role {
-    font-size: 12px;
+    font-size: 13px;
   }
   .nav-link {
     padding: 15px 18px;
