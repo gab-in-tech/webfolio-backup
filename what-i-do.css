@@ -122,10 +122,16 @@ html {
   font-family: "DM Mono", monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-1);
   margin-bottom: 14px;
+}
+
+.term {
+  font-style: italic;
+  color: var(--text-1);
+  font-weight: 500;
 }
 
 .homepage-nudge {
