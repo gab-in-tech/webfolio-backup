@@ -6,7 +6,6 @@
   --text-1: #e2e2e0;
   --text-2: #a0a09e;
   --text-3: #9c9c9a;
-  --text-4: #8e8e8c;
 }
 
 *,
@@ -294,7 +293,7 @@ footer {
   font-family: "DM Mono", monospace;
   letter-spacing: 0.02em;
   font-size: 13px;
-  color: var(--text-4);
+  color: var(--text-3);
 }
 
 @media (max-width: 540px) {
